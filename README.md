@@ -1,64 +1,24 @@
 # README
 
-## users
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| nickname   | string | null: false, unique: true |
-| email      | string | null: false, unique: true |
-| password   | string | null: false, unique: true |
-| family_name   | string | null: false |
-| first_name    | string | null: false |
-| family_name_kana   | string | null: false |
-| first_name_kana    | string | null: false |
-| birthday   | integer | null: false |
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-### Association
-- has_many :items
-- has_many :comments
-- has_one :buyers
+Things you may want to cover:
 
+* Ruby version
 
-## items
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user             | references | null: false, foreign_key: true |
-| item_name        | string | null: false |
-| category_id      | string | null: false |
-| note             | text | null: false |
-| condition_id     | integer | null: false |
-| delivery_fee_id  | integer | null: false |
-| delivery_area_id | string | null: false |
-| days_id          | integer | null: false |
-| price            | integer | null: false |
+* System dependencies
 
-### Association
-- belongs_to :users
-- has_one :buyers
-- has_many :comments
+* Configuration
 
+* Database creation
 
-## comment
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user     | references | null: false, foreign_key: true |
-| items    | string | null: false |
-| comments | string | null: false |
+* Database initialization
 
-### Association
-- belongs_to :users
-- belongs_to :items
+* How to run the test suite
 
+* Services (job queues, cache servers, search engines, etc.)
 
-# buyers
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| post_code     | string | null: false |
-| prefecture    | string | null: false |
-| city          | string | null: false |
-| block         | string | null: false |
-| building      | string |  |
-| phone_nimber  | string | null: false |
+* Deployment instructions
 
-### Association
-- belongs_to :users
-- belongs_to :items
+* ...
