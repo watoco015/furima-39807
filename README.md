@@ -10,7 +10,7 @@
 | first_name    | string | null: false |
 | family_name_kana   | string | null: false |
 | first_name_kana    | string | null: false |
-| birthday   | integer | null: false |
+| birthday           | integer | null: false |
 
 ### Association
 - has_many :items
@@ -52,6 +52,7 @@
 # buyers
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
+| order         | references | null: false, foreign_key: true |
 | post_code     | string | null: false |
 | prefecture    | string | null: false |
 | city          | string | null: false |
