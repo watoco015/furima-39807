@@ -27,7 +27,7 @@
 | condition_id     | integer | null: false |
 | delivery_fee_id  | integer | null: false |
 | delivery_area_id | integer | null: false |
-| day_id          | integer | null: false |
+| date_id          | integer | null: false |
 | price            | integer | null: false |
 
 ### Association
@@ -39,7 +39,7 @@
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | user     | references | null: false, foreign_key: true |
-| item    | string | null: false |
+| item    | string | null: false foreign_key: true|
 
 ### Association
 - belongs_to :user
