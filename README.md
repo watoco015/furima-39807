@@ -44,7 +44,7 @@
 ### Association
 - belongs_to :user
 - belongs_to :item
-- has one :buyer
+- has_one :buyer
 
 
 # buyers
