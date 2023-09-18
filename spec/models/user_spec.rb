@@ -54,7 +54,7 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Birthday can't be blank")
       end
-      
+
 #email
       it '重複したemailが存在する場合は登録できない' do
         @user.save
@@ -105,6 +105,12 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Password is invalid")
       end
+      it '全角文字を含むpasswordは登録できない' do
+        @user.password = 'あaaaa1'
+        @user.password_confirmation = 'あaaaa1'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password is invalid")
+      end
 
 #family_name,first_name
       it 'family_nameは全角文字(漢字ひらがなカタカナ)ではないと登録できない' do
@@ -122,7 +128,7 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Family name kana is invalid")
       end
-      it 'first_name_kanaはカタカナではないと登録できない' do
+      it 'first_name_kanaは全角カタカナではないと登録できない' do
         @user.first_name_kana = 'test'
         @user.valid?
         expect(@user.errors.full_messages).to include("First name kana is invalid")
