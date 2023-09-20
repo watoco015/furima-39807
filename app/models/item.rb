@@ -11,12 +11,11 @@ class Item < ApplicationRecord
   validates :shipping_day_id, presence: true
   validates :price, presence: true
 
+  has_one_attached :image
 
-
-
-  belongs_to :category
-  belongs_to :condition
-  belongs_to :delivery_fee
-  belongs_to :prefecture
-  belongs_to :shipping_day
+  belongs_to :category, class_name: 'Category'
+  belongs_to :condition, class_name: 'Condition'
+  belongs_to :delivery_fee, class_name: 'Delivery_fee'
+  belongs_to :prefecture, class_name: 'Prefecture'
+  belongs_to :shipping_day, class_name: 'Shipping_day'
 end
