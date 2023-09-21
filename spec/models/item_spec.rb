@@ -7,7 +7,7 @@ RSpec.describe Item, type: :model do
 
   describe '商品出品機能' do
     context '商品出品ができる場合' do
-      it 'item_name,category_id,note,condition_id,delivery_fee_id,prefecture_id,shipping_day_id,priceが存在すれば登録できる' do
+      it 'image,item_name,note,category_id,condition_id,delivery_fee_id,prefecture_id,shipping_day_id,priceが存在すれば登録できる' do
         expect(@item).to be_valid
       end
     end
@@ -111,9 +111,9 @@ RSpec.describe Item, type: :model do
       end
 #user
       it 'userが紐付いていなければ登録できない' do
-        @item.user = 'nil'
+        @item.user = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("")
+        expect(@item.errors.full_messages).to include("User must exist")
       end
     end
   end
