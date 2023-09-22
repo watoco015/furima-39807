@@ -26,6 +26,7 @@ class ItemsController < ApplicationController
   def edit
     unless @item.user_id == current_user.id
       redirect_to action: :index
+    end
   end
 
   def update
@@ -34,7 +35,6 @@ class ItemsController < ApplicationController
       else
         render :edit, status: :unprocessable_entity
       end
-    end
   end
 
   private
