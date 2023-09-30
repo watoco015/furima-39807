@@ -58,7 +58,7 @@
 | city          | string | null: false |
 | block         | string | null: false |
 | building      | string |  |
-| phone_nimber  | string | null: false |
+| phone_number  | string | null: false |
 
 ### Association
 - belongs_to :users
