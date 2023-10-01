@@ -9,6 +9,7 @@ class Item < ApplicationRecord
   belongs_to :delivery_fee, class_name: 'DeliveryFee'
   belongs_to :prefecture, class_name: 'Prefecture'
   belongs_to :shipping_day, class_name: 'ShippingDay'
+  has_one :order
 
   validates :item_name, presence: true
   validates :category_id, presence: true,
