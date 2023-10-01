@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
   before_action :set_item, only: [:index, :create]
   before_action :authenticate_user!, only: [:index, :create]
+  before_action :not_order, only: [:index, :create]
+
 
   def index
     gon.public_key = ENV['PAYJP_PUBLIC_KEY']
@@ -27,6 +29,12 @@ class OrdersController < ApplicationController
   def set_item
     item_id = params[:item_id]
     @item = Item.find(params[:item_id])
+  end
+
+  def not_order
+    if @item.user_id == current_user.id || @item.order != nil
+      redirect_to root_path
+    end
   end
 
   def pay_item
