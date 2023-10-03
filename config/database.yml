@@ -56,11 +56,7 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-production:
-  <<: *default
-  database: furima_39807_production
-  username: furima_39807
-  password: <%= ENV["FURIMA_39807_DATABASE_PASSWORD"] %>
+
 production:
   <<: *default
   adapter: mysql2
