@@ -11,6 +11,7 @@ class Item < ApplicationRecord
   belongs_to :shipping_day, class_name: 'ShippingDay'
   has_one :order
 
+  validates :image, presence: true
   validates :item_name, presence: true
   validates :category_id, presence: true,
              exclusion: { in: [1], message: "must be other than 1" }
