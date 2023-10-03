@@ -8,7 +8,7 @@ class OrderForm
     validates :post_code,
                format: { with: /\A\d{3}-\d{4}\z/, message: "is invalid" }
     validates :prefecture_id, 
-               exclusion: { in: [1], message: "must be other than 1" }
+               numericality: { other_than: 1, message: "can't be blank" }
 
     validates :city
     validates :block

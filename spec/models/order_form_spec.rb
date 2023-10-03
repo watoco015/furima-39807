@@ -30,7 +30,7 @@ RSpec.describe OrderForm, type: :model do
         @orderform.valid?
         expect(@orderform.errors.full_messages).to include("Prefecture can't be blank")
       end
-      it 'prefecture_idが1では登録できない' do
+      it 'prefecture_idが1では購入できない' do
         @orderform.prefecture_id = 1
         @orderform.valid?
         expect(@orderform.errors.full_messages).to include("Prefecture must be other than 1")
